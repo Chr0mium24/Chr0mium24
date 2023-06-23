@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <title>My first ggb app</title>
+        <meta name='viewport' content='width=device-width, initial-scale=1'>
+        <link rel='stylesheet' type='text/css' media='screen' href='../src/main.css'>
+        <script type="text/javascript" src="https://www.geogebra.org/apps/deployggb.js"></script>
+
+    </head>
+    <body>
+        <script type="text/javascript">
+            //aux function
+            function createApplet(filename, params) {
+                var applet = new GGBApplet({ filename: filename, ...params }, true);
+                return applet;
+            }
+
+            //register your app here
+            window.onload = function () {
+                // Syntax: createApplet(filename,params).inject(divid) 
+                createApplet("../ggb_files/test1.ggb", { "showToolBar": false }).inject("app1");
+
+
+                // Params reference:
+                var params_example = {
+                    "width": 600,
+                    "height": 245,
+                    "prerelease": false,
+                    "showToolBar": false,
+                    "borderColor": null,
+                    "showMenuBar": false,
+                    "showAlgebraInput": false,
+                    "customToolbar": "0 || 1",
+                    "showResetIcon": true,
+                    "enableLabelDrags": false,
+                    "enableShiftDragZoom": true,
+                    "enableRightClick": false,
+                    "capturingThreshold": null,
+                    "showToolBarHelp": true,
+                    "errorDialogsActive": true,
+                    "useBrowserForJS": false,
+                };
+            }
+        </script>
+
+
+        <!-- add your ggb div & html here -->
+        <h1>This is my first ggb app!</h1>
+        <div id="app1"></div>
+
+    </body>
+</html>
